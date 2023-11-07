@@ -121,7 +121,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align centro, arriba
             focus_mask True
-            auto flecha action [Hide("interactuableScreen"), ToggleScreen("flechasDeNavegacion"),Return(), Jump(flechaArriba)]
+            auto flecha action [SetVariable("destino", flechaArriba), Return()]
     else:
         add( flechaVacia )
 
@@ -129,7 +129,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align derecha, centro
             focus_mask True
-            auto flecha action [Hide("interactuableScreen"), ToggleScreen("flechasDeNavegacion"),Return(), Jump(flechaDerecha)] at rotacion(90)
+            auto flecha action [SetVariable("destino", flechaDerecha),Return()] at rotacion(90)
     else:
         add( flechaVacia )
 
@@ -137,7 +137,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align centro, abajo
             focus_mask True
-            auto flecha action [Hide("interactuableScreen"), ToggleScreen("flechasDeNavegacion"),Return(), Jump(flechaAbajo)] at rotacion(180)
+            auto flecha action [SetVariable("destino", flechaAbajo),Return()] at rotacion(180)
     else: 
         add( flechaVacia )  
      
@@ -145,7 +145,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align izquierda, centro
             focus_mask True
-            auto flecha action [Hide("interactuableScreen"), ToggleScreen("flechasDeNavegacion"),Return(), Jump(flechaIzquierda)] at rotacion(270)
+            auto flecha action [SetVariable("destino", flechaIzquierda),Return()] at rotacion(270)
     else: 
         add( flechaVacia )
 

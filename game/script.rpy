@@ -23,6 +23,8 @@ default preferences.text_cps = 40
 
 define escena = 1
 
+define destino = None
+
 define fadetime= 0.1
 define fade_comun = Fade(fadetime,0.0,fadetime)
 define fade_largo = Fade(5,0.0,5)
@@ -75,13 +77,21 @@ define visitadotunelCerrado = False
 label vagon:
     scene bg vagon with fade_comun
     play music bgm_Te_Despertaste fadeout 1.0 fadein 1.0 loop volume 0.3
-    # show screen nombreDeHabitacion("Vagon")
 
     if escena in [1,3]:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
+
+    while destino == None:
+        show screen interactuableScreen(cigarrillos)
+        show screen flechasDeNavegacion("cabina","","","anden1" if escena > 2 else "")
+       
+        $ ui.interact()   
+        
+        hide screen interactuableScreen
+        hide screen flechasDeNavegacion
     
-    call screen flechasDeNavegacion("cabina","","","anden1" if escena > 2 else "")
+    jump expression destino
 
 label cabina:
     scene bg cabina with fade_comun
