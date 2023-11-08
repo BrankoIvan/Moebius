@@ -75,6 +75,7 @@ define visitadotunelCerrado = False
 # Mapa
 
 label vagon:
+    $ destino = None
     scene bg vagon with fade_comun
     play music bgm_Te_Despertaste fadeout 1.0 fadein 1.0 loop volume 0.3
 
@@ -83,17 +84,14 @@ label vagon:
         $ escena += 1
 
     while destino == None:
-        show screen interactuableScreen(cigarrillos)
+        window hide
         show screen flechasDeNavegacion("cabina","","","anden1" if escena > 2 else "")
-       
-        $ ui.interact()   
-        
-        hide screen interactuableScreen
-        hide screen flechasDeNavegacion
+        pause
     
     jump expression destino
 
 label cabina:
+    $ destino = None
     scene bg cabina with fade_comun
     play music bgm_Entras_en_la_cabina fadeout 1.0 fadein 1.0 loop volume 0.3
     if escena in [2,9]:
@@ -102,10 +100,16 @@ label cabina:
     
     if escena == 10:
         jump ending
+
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("","","vagon","")
+        pause
     
-    call screen flechasDeNavegacion("","","vagon","")
+    jump expression destino
 
 label anden1:
+    $ destino = None
     scene bg anden_1 with fade_comun
     play music bgm_Al_salir fadeout 1.0 fadein 1.0 loop volume 0.3
 
@@ -113,18 +117,30 @@ label anden1:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
 
-    call screen flechasDeNavegacion("anden2","vagon","","tunel2")
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("anden2","vagon","","tunel2")
+        pause
+    
+    jump expression destino
 
 label tunel2:
+    $ destino = None
     scene bg tunel_2 with fade_comun
     play music bgm_Pasillo_largo fadeout 1.0 fadein 1.0 loop volume 1.5
     if escena in []:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
     
-    call screen flechasDeNavegacion("tunelCerrado","","anden1","")
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("tunelCerrado","","anden1","")
+        pause
+    
+    jump expression destino
 
 label anden2:
+    $ destino = None
     scene bg anden_2 with fade_comun
     play music bgm_Al_salir fadeout 1.0 fadein 1.0 loop volume 0.3
     
@@ -132,10 +148,16 @@ label anden2:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
 
-    $ cartel.mostrar()
-    call screen flechasDeNavegacion("anden_fondo","","anden1","tunel")
+    while destino == None:
+        window hide
+        $ cartel.mostrar()
+        show screen flechasDeNavegacion("anden_fondo","","anden1","tunel")
+        pause
+    
+    jump expression destino
 
 label anden_fondo:
+    $ destino = None
     scene bg anden_fondo with fade_comun
     play music bgm_Pasillo_largo fadeout 1.0 fadein 1.0 loop volume 1.5
 
@@ -143,11 +165,16 @@ label anden_fondo:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
 
-    $ poster.mostrar()
-
-    call screen flechasDeNavegacion("","vias","anden2","baño")
+    while destino == None:
+        window hide
+        $ poster.mostrar()
+        show screen flechasDeNavegacion("","vias","anden2","baño")
+        pause
+    
+    jump expression destino
 
 label baño:
+    $ destino = None
     scene bg baño with fade_comun
     play music bgm_Pasillo_largo fadeout 1.0 fadein 1.0 loop volume 1.5
     
@@ -155,9 +182,13 @@ label baño:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
 
-    $ cigarrillos.mostrar()
-
-    call screen flechasDeNavegacion("","","anden_fondo","")
+    while destino == None:
+        window hide
+        $ cigarrillos.mostrar()
+        show screen flechasDeNavegacion("","","anden_fondo","")
+        pause
+    
+    jump expression destino
 
 label vias:
     scene black with fade_comun
@@ -172,6 +203,7 @@ label vias:
     jump anden_fondo
 
 label tunelCerrado:
+    $ destino = None
     scene bg salida_cerrada with fade_comun
     play music bgm_Pasillo_largo fadeout 1.0 fadein 1.0 loop volume 1.5
 
@@ -182,10 +214,16 @@ label tunelCerrado:
     if escena in []:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
-
-    call screen flechasDeNavegacion("","","tunel2","")
+    
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("","","tunel2","")
+        pause
+    
+    jump expression destino
 
 label tunel:
+    $ destino = None
     scene bg tunel_1 with fade_comun
     play music bgm_Pasillo_largo fadeout 1.0 fadein 1.0 loop volume 1.5
     
@@ -193,9 +231,15 @@ label tunel:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
     
-    call screen flechasDeNavegacion("escalera","","anden2","")
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("escalera","","anden2","")
+        pause
+    
+    jump expression destino
 
 label escalera:
+    $ destino = None
     scene bg escalera with fade_comun
     play music bgm_Escaleras fadeout 1.0 fadein 1.0 loop volume 2
     
@@ -203,9 +247,15 @@ label escalera:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
 
-    call screen flechasDeNavegacion("puerta_cerrada","","tunel","")
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("puerta_cerrada","","tunel","")
+        pause
+    
+    jump expression destino
 
 label puerta_cerrada:
+    $ destino = None
     scene bg salida_cerrada with fade_comun
     play music bgm_Escaleras fadeout 1.0 fadein 1.0 loop volume 2
 
@@ -213,7 +263,12 @@ label puerta_cerrada:
         $ renpy.call("escena" + str(escena))
         $ escena += 1
 
-    call screen flechasDeNavegacion("","","escalera","")
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("","","escalera","")
+        pause
+    
+    jump expression destino
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Historia

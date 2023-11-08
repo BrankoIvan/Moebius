@@ -9,11 +9,9 @@ init python:
             self.posicion = unasCoordenadas
             self.rutaDeCerca = rutaParaVistaCercana
             self.descripcion = unLabel
-            self.fueInteractuado = False
         
         def mostrar( self ):
-            if not self.fueInteractuado:
-                renpy.call_screen( "interactuableScreen", self )
+            renpy.show_screen( "interactuableScreen", self )
 
     class Item( Interactuable ):
         inventario = []
@@ -23,24 +21,29 @@ init python:
             
             self.rutaDelInvetario = rutaParaInventario
             self.estaEnInventario = False
+            self.fueAgarrado = False
 
         def agregarAlInvetario( self ):
-            self.fueInteractuado = True
+            self.fueAgarrado = True
             self.estaEnInventario = True
             self.inventario.append( self )
             
             self.actualizarInventario()
         
         def sacarDelInvetario( self ):
-            self.fueInteractuado = True
+            self.fueAgarrado = True
             self.estaEnInventario = False
-            self.inventario.remove(self)
+            self.inventario.remove( self )
             
             self.actualizarInventario()
 
         def actualizarInventario( self ):
             renpy.hide_screen( "inventarioScreen" )
             renpy.show_screen( "inventarioScreen" )
+        
+        def mostrar( self ):
+            if not self.fueAgarrado:
+                super().mostrar()
 
     renpy.music.register_channel ("music2", mixer = "music", loop = True, stop_on_mute = True, tight = False, file_prefix = '', file_suffix = '', buffer_queue = True )
 
@@ -83,7 +86,7 @@ screen inventarioScreen():
 screen interactuableScreen( interactuable ):
     imagebutton:
         pos interactuable.posicion
-        auto interactuable.rutaDelBoton action [Call("pantallaDeCerca", interactuable)]
+        auto interactuable.rutaDelBoton action [Hide("interactuableScreen"),Call("pantallaDeCerca", interactuable)]
     
 label pantallaDeCerca( interactuable ):
     $ interactuable.fueInteractuado = True
@@ -121,7 +124,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align centro, arriba
             focus_mask True
-            auto flecha action [SetVariable("destino", flechaArriba), Return()]
+            auto flecha action [SetVariable("destino", flechaArriba), Call("hide_all")]
     else:
         add( flechaVacia )
 
@@ -129,7 +132,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align derecha, centro
             focus_mask True
-            auto flecha action [SetVariable("destino", flechaDerecha),Return()] at rotacion(90)
+            auto flecha action [SetVariable("destino", flechaDerecha), Call("hide_all")] at rotacion(90)
     else:
         add( flechaVacia )
 
@@ -137,7 +140,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align centro, abajo
             focus_mask True
-            auto flecha action [SetVariable("destino", flechaAbajo),Return()] at rotacion(180)
+            auto flecha action [SetVariable("destino", flechaAbajo), Call("hide_all")] at rotacion(180)
     else: 
         add( flechaVacia )  
      
@@ -145,7 +148,7 @@ screen flechasDeNavegacion( flechaArriba, flechaDerecha, flechaAbajo, flechaIzqu
         imagebutton:
             align izquierda, centro
             focus_mask True
-            auto flecha action [SetVariable("destino", flechaIzquierda),Return()] at rotacion(270)
+            auto flecha action [SetVariable("destino", flechaIzquierda), Call("hide_all")] at rotacion(270)
     else: 
         add( flechaVacia )
 
@@ -169,3 +172,11 @@ transform toggleShow:
         linear .1 alpha 1.0
     on hide:
         linear .1 alpha 0.0
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------
+# 
+
+label hide_all:
+    hide screen interactuableScreen
+    hide screen flechasDeNavegacion
+    return
