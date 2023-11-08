@@ -15,41 +15,54 @@ define Maquinista = Character("Maquinista",
     what_prefix = "{cps=5}")
 
 define Guardia = Character("Guardia", 
-    color = "#ff28288c", 
-    what_prefix = "")
+    color = "#ff28288c")
 
 default preferences.text_cps = 40
 
-define escena = 1
-
+define escena = None
 define destino = None
+define visitadotunelCerrado = None
 
-define fadetime= 0.1
-define fade_comun = Fade(fadetime,0.0,fadetime)
-define fade_largo = Fade(5,0.0,5)
+define fadetime = 0.1
+define fade_comun = Fade(fadetime, 0.0, fadetime)
+define fade_largo = Fade(5, 0.0, 5)
+
+define cartel = None
+define poster = None
+define cigarrillos = None
+define caramelos = None
 
 label start:
     scene black
-    show screen inventarioScreen
+    
+    call inicializacionDeVariables
+    
     jump intro
+
+label inicializacionDeVariables:
+    python:
+        escena = 1
+        destino = None
+        visitadotunelCerrado = False
+        
+        cartel = Interactuable(exCartel, (298,445), exCartelCerca, "descripcionCartel")
+        poster = Interactuable(exPoster, (586,391), exPosterCerca, "descripcionPoster")
+        
+        cigarrillos = Item(exCigarrillos, (1264,354), exCigarrillosCerca, "descripcionCigarrillos", exCigarrillosInventario)
+        caramelos = Item("", (151,826), "", "descripcionCaramelos", exCaramelosInventario)
+    
     return
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Definicion de Items e Interactuables
 
-define cartel = Interactuable(exCartel, (298,445), exCartelCerca, "descripcionCartel")
-
 label descripcionCartel:
     Narrador "El cartel se encuentra desgastado y roto, no se puede ver el nombre de la estación."
     return
 
-define poster = Interactuable(exPoster, (586,391), exPosterCerca, "descripcionPoster")
-
 label descripcionPoster:
     Narrador "Un afiche sucio y desgastado, parece de una pelicula. La fecha de estreno esta arrancada."
     return
-
-define cigarrillos = Item(exCigarrillos, (1264,354), exCigarrillosCerca, "descripcionCigarrillos", exCigarrillosInventario)
 
 label descripcionCigarrillos:
 
@@ -63,12 +76,6 @@ label descripcionCigarrillos:
             pass
 
     return
-
-define caramelos = Item("", (151,826), "", "descripcionCaramelos", exCaramelosInventario)
-
-#----------------------------------------------------------------------------------------------------------------------------------------------------
-#Visitas
-define visitadotunelCerrado = False
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Mapa
