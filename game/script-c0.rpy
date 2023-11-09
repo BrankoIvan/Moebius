@@ -290,6 +290,7 @@ label c0escena2:
     Narrador "La cabina del maquinista se extiende frente tuyo, una maraña de controles y palancas en un espacio reducido"
     Narrador "Los controles están manchados de grasa y, en el rincón, ves montones de envoltorios de caramelos."
     
+    play music bgm_Conductor fadeout 1.0 fadein 1.0 loop
     show spr maquinista with dissolve
     
     Narrador "El maquinista se gira lentamente en su silla hacia vos."
@@ -327,6 +328,7 @@ label c0escena3:
     return
 
 label c0escena4:
+    play music bgm_Ambiente2 fadeout 1.0 fadein 1.0 loop
     Narrador "Finalmente, te aventuras fuera del vagón y te encontras en el andén de la estación."
     Narrador "Debería estar lleno de gente esperando el tren, pero la soledad te envuelve."
     Narrador "Los viejos asientos de madera se alinean a lo largo del andén, vacíos y desgastados por el tiempo."
@@ -359,6 +361,7 @@ label c0escena7:
     Narrador "Después de atravesar el oscuro pasillo, te encontrás al pie de las escaleras."
     Narrador "La presencia extraña que lo ace   cha se vuelve más intensa a medida que se acerca."
     
+    play music bgm_Conductor fadeout 1.0 fadein 1.0 loop
     show spr seguridad with dissolve
     
     Narrador "De repente, un guardia deformado, apenas reconocible como humano, aparece en la oscuridad. Te mira con una ceja alzada."

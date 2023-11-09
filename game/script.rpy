@@ -3,19 +3,23 @@
 
 define Protagonista = Character("", 
     color = "#ff9100", 
-    what_prefix = "{k=3}")
+    what_prefix = "{k=3}",
+    callback=type_sound)
 
 define Narrador = Character("", 
     color = "#008cff",
     what_color="#bdbcfb", 
-    what_prefix = "{k=3}{i}")
+    what_prefix = "{k=3}{i}",
+    callback=type_sound)
 
 define Maquinista = Character("Maquinista", 
     color = "#0aff1e8c", 
-    what_prefix = "{cps=5}")
+    what_prefix = "{cps=5}",
+    callback=type_sound)
 
 define Guardia = Character("Guardia", 
-    color = "#ff28288c")
+    color = "#ff28288c",
+    callback=type_sound)
 
 default preferences.text_cps = 40
 
@@ -35,7 +39,7 @@ define caramelos = None
 label start:
     scene black
     
-    call inicializacionDeVariables
+    call inicializacionDeVariables from _call_inicializacionDeVariables
     
     jump intro
 
