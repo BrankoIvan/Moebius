@@ -160,6 +160,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
+    yalign 0.5
 
     adjust_spacing False
 
