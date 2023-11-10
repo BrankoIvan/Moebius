@@ -20,6 +20,7 @@ define config.check_conflicting_properties = True
 ## Variables de configuración de la interfaz.
 ################################################################################
 
+define default_text_size = 30
 
 ## Colores #####################################################################
 ##
@@ -66,16 +67,16 @@ define gui.name_text_font = "3_INTERFAZ/TIPOGRAFÍA/DotGothic16-Regular.ttf"
 define gui.interface_text_font = "3_INTERFAZ/TIPOGRAFÍA/DotGothic16-Regular.ttf"
 
 ## El tamaño normal del texto del diálogo.
-define gui.text_size = 33
+define gui.text_size = default_text_size
 
 ## El tamaño de los nombres de los personajes
-define gui.name_text_size = 33
+define gui.name_text_size = default_text_size
 
 ## El tamaño del texto en la interfaz.
-define gui.interface_text_size = 33
+define gui.interface_text_size = default_text_size
 
 ## El tamaño de etiquetas en la interfaz.
-define gui.label_text_size = 36
+define gui.label_text_size = default_text_size
 
 ## El tamaño del texto en las notificaciones.
 define gui.notify_text_size = 24
