@@ -86,6 +86,10 @@ define audio.bgm_Entras_en_la_cabina = backgroundmusic + "Entras en la cabina de
 define audio.bgm_Escaleras = backgroundmusic + "Escaleras.mp3"
 define audio.bgm_Te_Despertaste = backgroundmusic + "Te despertaste.mp3"
 
+define audio.bgm_Ambiente1 = backgroundmusic + "Ambiente 1.mp3"
+define audio.bgm_Ambiente2 = backgroundmusic + "Ambiente 2.mp3"
+define audio.bgm_Conductor = backgroundmusic + "Pista Conductor.mp3"
+
 define audio.sfx_Panel_de_control = sfx + "Efecto-El panel de control se extiende.mp3"
 define audio.sfx_Sepulcro = sfx + "Efecto-El subte es ahora tu sepulcro.mp3"
 define audio.sfx_Cartel_vacio = sfx + "Efecto-La pared donde debería estar el cartel.mp3"
