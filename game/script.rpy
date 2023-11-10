@@ -4,22 +4,22 @@
 define Protagonista = Character("", 
     color = "#ff9100", 
     what_prefix = "{k=3}",
-    callback=type_sound)
+    callback=voz_lenta)
 
 define Narrador = Character("", 
     color = "#008cff",
     what_color="#bdbcfb", 
     what_prefix = "{k=3}{i}",
-    callback=type_sound)
+    callback=voz_lenta)
 
 define Maquinista = Character("Maquinista", 
     color = "#0aff1e8c", 
     what_prefix = "{cps=5}",
-    callback=type_sound)
+    callback=voz_lenta)
 
 define Guardia = Character("Guardia", 
     color = "#ff28288c",
-    callback=type_sound)
+    callback=voz_lenta)
 
 default preferences.text_cps = 40
 

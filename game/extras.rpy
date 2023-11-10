@@ -1,7 +1,8 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Clases y Funciones
 
-define sounds = ['audio/A1.ogg', 'audio/A2.ogg', 'audio/A3.ogg', 'audio/A4.ogg', 'audio/A5.ogg', 'audio/B1.ogg', 'audio/B2.ogg', 'audio/B3.ogg', 'audio/B4.ogg', 'audio/B5.ogg']
+define voces_lentas = ['audio/B1.ogg', 'audio/B2.ogg', 'audio/B3.ogg', 'audio/B4.ogg', 'audio/B5.ogg']
+define voces_rapidas = ['audio/A1.ogg', 'audio/A2.ogg', 'audio/A3.ogg', 'audio/A4.ogg', 'audio/A5.ogg']
 
 init python:
     class Interactuable:
@@ -48,43 +49,50 @@ init python:
 
     renpy.music.register_channel ("music2", mixer = "music", loop = True, stop_on_mute = True, tight = False, file_prefix = '', file_suffix = '', buffer_queue = True )
 
-    def type_sound(event, interact=True, **kwargs):
-        if not interact:
-            return
+    def voz_lenta(event, interact=True, **kwargs):
+        if interact: voz(event, voces_lentas)
+        
+        return
+        
+    def voz_rapida(event, interact=True, **kwargs):
+        if interact: voz(event, voces_rapidas)
+        
+        return
 
+    
+    def voz(event, lista_de_voces):
         if event == "show": #if text's being written by character, spam typing sounds until the text ends
-            renpy.sound.play(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            renpy.sound.queue(renpy.random.choice(sounds))
-            #dumb way to do it but it works, dunno if it causes memory leaks but it's almost 6AM :v
+            renpy.sound.play(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
+            renpy.sound.queue(renpy.random.choice(lista_de_voces))
 
         elif event == "slow_done" or event == "end":
             renpy.sound.stop()
