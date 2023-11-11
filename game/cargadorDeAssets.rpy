@@ -68,6 +68,7 @@ image bg tunel_3 = backgroundse1 + "tunel_3.jpg"
 image bg habitacion = backgroundse1 + "habitacion.jpg"
 image bg vias_1 = backgroundse1 + "vias_1.jpg"
 image bg vias_2 = backgroundse1 + "vias_2.jpg"
+image bg vias_3 = backgroundse1 + "vias_3.jpg"
 
 
 # Fondos Animados
