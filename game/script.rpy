@@ -41,7 +41,7 @@ label start:
     
     call inicializacionDeVariables from _call_inicializacionDeVariables
     
-    jump intro
+    jump c1vagon
 
 label inicializacionDeVariables:
     python:
