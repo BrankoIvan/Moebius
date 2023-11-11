@@ -1,6 +1,7 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Rutas
 define backgrounds = "images/bg/"
+define backgroundse1 = "images/bg/e1"
 define extras = "images/interactuables/"
 define sprites = "images/sprites/"
 define movies = "images/bg/movies/"
@@ -31,7 +32,7 @@ image spr guardia:
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Fondos Mapa
 
-
+#e0
 image bg cabina = backgrounds + "cabina.jpg"
 image bg anden_2 = backgrounds + "anden_2.jpg"
 image bg anden_fondo = backgrounds + "anden_fondo.jpg"
@@ -41,6 +42,32 @@ image bg baño = backgrounds + "baño.jpg"
 image bg puerta_vagon_cerrada = backgrounds + "vagon_salida_cerrada.jpg"
 image bg salida_cerrada = backgrounds + "salida_cerrada.jpg"
 image bg oscuridad = backgrounds + "oscuridad.jpg"
+
+#e1
+image bg anden_frente_1 = backgroundse1 + "anden_frente_1.jpg"
+image bg anden_frente_2 = backgroundse1 + "anden_frente_2.jpg"
+image bg baño_2 = backgroundse1 + "baño_2.jpg"
+image bg conexión_1 = backgroundse1 + "conexión_1.jpg"
+image bg c1_anden_1 = backgroundse1 + "c1_anden_1.jpg"
+image bg c1_anden_2 = backgroundse1 + "c1_anden_2.jpg"
+image bg escalera_3_der = backgroundse1 + "escalera_3_der.jpg"
+image bg escalera_3_izq = backgroundse1 + "lobby.jpg"
+image bg lobby_reloj = backgroundse1 + "lobby_reloj.jpg"
+image bg pasaje_secreto = backgroundse1 + "pasaje_secreto.jpg"
+image bg puesto_diario = backgroundse1 + "puesto_diario.jpg"
+image bg recepcion = backgroundse1 + "recepcion.jpg"
+image bg sala_personal = backgroundse1 + "sala_personal.jpg"
+image bg sala_suicidio = backgroundse1 + "sala_suicidio.jpg"
+image bg salida_cerrada_2 = backgroundse1 + "salida_cerrada_2.jpg"
+image bg segundo_centro_a = backgroundse1 + "segundo_centro_a.jpg"
+image bg segundo_centro_b = backgroundse1 + "segundo_centro_b.jpg"
+image bg segundo_derecha = backgroundse1 + "segundo_derecha.jpg"
+image bg segundo_izquierda= backgroundse1 + "segundo_izquierda.jpg"
+image bg tunel_3 = backgroundse1 + "tunel_3.jpg"
+image bg tunel_4 = backgroundse1 + "tunel_4.jpg"
+image bg vias_1 = backgroundse1 + "vias_1.jpg"
+image bg vias_2 = backgroundse1 + "vias_2.jpg"
+
 
 # Fondos Animados
 
