@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Rutas
 define backgrounds = "images/bg/"
-define backgroundse1 = "images/bg/c1"
+define backgroundse1 = "images/bg/c1/"
 define extras = "images/interactuables/"
 define sprites = "images/sprites/"
 define movies = "images/bg/movies/"
@@ -64,9 +64,10 @@ image bg segundo_centro_b = backgroundse1 + "segundo_centro_b.jpg"
 image bg segundo_derecha = backgroundse1 + "segundo_derecha.jpg"
 image bg segundo_izquierda= backgroundse1 + "segundo_izquierda.jpg"
 image bg tunel_3 = backgroundse1 + "tunel_3.jpg"
-image bg tunel_4 = backgroundse1 + "habitacion.jpg"
+image bg habitacion = backgroundse1 + "habitacion.jpg"
 image bg vias_1 = backgroundse1 + "vias_1.jpg"
 image bg vias_2 = backgroundse1 + "vias_2.jpg"
+image bg vias_3 = backgroundse1 + "vias_3.jpg"
 
 
 # Fondos Animados
