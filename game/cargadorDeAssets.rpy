@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Rutas
 define backgrounds = "images/bg/"
-define backgroundse1 = "images/bg/c1"
+define backgroundse1 = "images/bg/c1/"
 define extras = "images/interactuables/"
 define sprites = "images/sprites/"
 define movies = "images/bg/movies/"
@@ -51,7 +51,8 @@ image bg conexión_1 = backgroundse1 + "conexión_1.jpg"
 image bg c1_anden_1 = backgroundse1 + "c1_anden_1.jpg"
 image bg c1_anden_2 = backgroundse1 + "c1_anden_2.jpg"
 image bg escalera_3_der = backgroundse1 + "escalera_3_der.jpg"
-image bg escalera_3_izq = backgroundse1 + "lobby.jpg"
+image bg escalera_3_izq = backgroundse1 + "escalera_3_izq.jpg"
+image bg lobby = backgroundse1 + "lobby.jpg"
 image bg lobby_reloj = backgroundse1 + "lobby_reloj.jpg"
 image bg pasaje_secreto = backgroundse1 + "pasaje_secreto.jpg"
 image bg puesto_diario = backgroundse1 + "puesto_diario.jpg"
