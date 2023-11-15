@@ -7,6 +7,7 @@ define sprites = "images/sprites/"
 define movies = "images/bg/movies/"
 define backgroundmusic = "audio/bgm/"
 define sfx = "audio/sfx/"
+define music = "audio/music/"
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Sprites
@@ -106,23 +107,39 @@ image puerta_cerrada_1b = Movie(play= movies + "puerta_cerrada_1b.webm")
 image bg good ending = Movie(play= movies + "el_fin.webm")
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-# Audio
+# Audio -Backgrounds
 
-define audio.bgm_Estas_volviendo_a_casa = backgroundmusic + "Estás volviendo de una larga jornada.mp3"
-define audio.bgm_Pasillo_largo = backgroundmusic + "Pasillo largo.mp3"
-define audio.bgm_Al_salir = backgroundmusic + "Al salir del subte.mp3"
-define audio.bgm_Entras_en_la_cabina = backgroundmusic + "Entras en la cabina del conductor.mp3"
-define audio.bgm_Escaleras = backgroundmusic + "Escaleras.mp3"
-define audio.bgm_Te_Despertaste = backgroundmusic + "Te despertaste.mp3"
+define audio.bgm_Anden1 = backgroundmusic + "Ambiente Andén 1.mp3"
+define audio.bgm_Anden2 = backgroundmusic + "Ambiente Andén 2 y Andén fondo.mp3"
+define audio.bgm_Baño = backgroundmusic + "Ambiente Baño.mp3"
+define audio.bgm_Cabina = backgroundmusic + "Ambiente cabina.mp3"
+define audio.bgm_Escaleras = backgroundmusic + "Ambiente Escaleras.mp3"
+define audio.bgm_Puertas_Cerradas = backgroundmusic + "Ambiente Puertas cerradas (1 y 2).mp3"
+define audio.bgm_Sucumbir_Oscuridad = backgroundmusic + "Ambiente sucumbir a la oscuridad.mp3"
+define audio.bgm_Tunel1 = backgroundmusic + "Ambiente Túnel 1.mp3"
+define audio.bgm_Tunel2 = backgroundmusic + "Ambiente Túnel 2.mp3"
+define audio.bgm_Vagon = backgroundmusic + "Ambiente Vagón.mp3"
+define audio.bgm_Vias = backgroundmusic + "Ambiente Vías.mp3"
+define audio.bgm_Tren_Llegando = backgroundmusic + "Inicio-Tren llegando.mp3"
 
-define audio.bgm_Ambiente1 = backgroundmusic + "Ambiente 1.mp3"
-define audio.bgm_Ambiente2 = backgroundmusic + "Ambiente 2.mp3"
-define audio.bgm_Conductor = backgroundmusic + "Pista Conductor.mp3"
+# Audio - Musica
 
-define audio.sfx_Panel_de_control = sfx + "Efecto-El panel de control se extiende.mp3"
-define audio.sfx_Sepulcro = sfx + "Efecto-El subte es ahora tu sepulcro.mp3"
-define audio.sfx_Cartel_vacio = sfx + "Efecto-La pared donde debería estar el cartel.mp3"
-define audio.sfx_Puerta_se_abre = sfx + "Efecto-Puerta se abre antes de salir al andén.mp3"
+define audio.musica_final_del_cap = music + "Música final del capítulo.mp3"
+define audio.musica_guardia = music + "Música Guardia.mp3"
+define audio.musica_maquinista = music + "Música Maquinista.mp3"
+
+#Audio - Sonidos
+
+define audio.sfx_Caramelos = sfx + "SFX Agarrar caramelos_ entregar caramelos.mp3"
+define audio.sfx_Cigarillos = sfx + "SFX Agarrar Cigarrillos.mp3"
+define audio.sfx_Cartel = sfx + "SFX Interacción Cartel.mp3"
+define audio.sfx_Espejo = sfx + "SFX Interacción Espejo en baño.mp3"
+define audio.sfx_Poster = sfx + "SFX Interacción Poster.mp3"
+define audio.sfx_Puerta = sfx + "SFX La puerta del subte se abre.mp3"
+define audio.sfx_Risa = sfx + "SFX Risa maníaca.mp3"
+define audio.sfx_Subte_Frenando = sfx + "SFX Subte frenando.mp3"
+define audio.sfx_Subte_Yendose = sfx + "SFX Subte yéndose.mp3"
+define audio.sfx_Voces = sfx + "SFX Voces se desvanecen en el subte.mp3"
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Extras
