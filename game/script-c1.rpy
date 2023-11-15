@@ -110,20 +110,20 @@ label c1lobby:
     
     jump expression destino
 
-#label c1lobby:
-   # $ destino = None
-    #scene bg vagon with fade_comun
-    #play music bgm_Te_Despertaste fadeout 1.0 fadein 1.0 loop volume 0.3
+label c1lobby:
+    $ destino = None
+    scene bg vagon with fade_comun
+    play music bgm_Te_Despertaste fadeout 1.0 fadein 1.0 loop volume 0.3
 
-   # if escena in []:
-    #    $ renpy.call("c1escena" + str(escena))
-    #    $ escena += 1
+    if escena in []:
+        $ renpy.call("c1escena" + str(escena))
+        $ escena += 1
 
-   # while destino == None:
-  #      window hide
-  #      show screen flechasDeNavegacion("c1lobbyreloj","c1escalera3der","c1tuner3","c1escalera3izq")
-  #      pause
+    while destino == None:
+        window hide
+        show screen flechasDeNavegacion("c1lobbyreloj","c1escalera3der","c1tuner3","c1escalera3izq")
+        pause
     
-   # jump expression destino
+    jump expression destino
 
 
