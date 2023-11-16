@@ -112,8 +112,8 @@ label c1lobby:
 
 label c1escalera3izq:
     $ destino = None
-    scene bg escalera_3_izq with fade_comun
-    #play music bgm_Te_Despertaste fadeout 1.0 fadein 1.0 loop volume 0.3
+    scene bg vagon with fade_comun
+    play music bgm_Te_Despertaste fadeout 1.0 fadein 1.0 loop volume 0.3
 
     if escena in []:
         $ renpy.call("c1escena" + str(escena))
