@@ -6,20 +6,24 @@ define voces_rapidas = ['audio/A1.ogg', 'audio/A2.ogg', 'audio/A3.ogg', 'audio/A
 
 init python:
     class Interactuable:
-        def __init__( self, rutaParaBoton, unasCoordenadas, rutaParaVistaCercana, unLabel ):
+        def __init__( self, rutaParaBoton, unasCoordenadas, rutaParaVistaCercana, unLabel, unSonido):
             self.rutaDelBoton = rutaParaBoton
             self.posicion = unasCoordenadas
             self.rutaDeCerca = rutaParaVistaCercana
             self.descripcion = unLabel
+            self.sfx = unSonido
         
         def mostrar( self ):
             renpy.show_screen( "interactuableScreen", self )
+        
+        def interactuar(self):
+            renpy.sound.play(self.sfx)
 
     class Item( Interactuable ):
         inventario = []
 
-        def __init__( self, rutaParaBoton, unasCoordenadas, rutaParaVistaCercana, unLabel, rutaParaInventario ):
-            super().__init__( rutaParaBoton, unasCoordenadas, rutaParaVistaCercana, unLabel )
+        def __init__( self, rutaParaBoton, unasCoordenadas, rutaParaVistaCercana, unLabel, unSonido, rutaParaInventario ):
+            super().__init__( rutaParaBoton, unasCoordenadas, rutaParaVistaCercana, unLabel, unSonido )
             
             self.rutaDelInvetario = rutaParaInventario
             self.estaEnInventario = False
@@ -40,6 +44,7 @@ init python:
             self.actualizarInventario()
 
         def actualizarInventario( self ):
+            super().interactuar()
             renpy.hide_screen( "inventarioScreen" )
             renpy.show_screen( "inventarioScreen" )
         
@@ -140,10 +145,11 @@ screen interactuableScreen( interactuable ):
     
 label pantallaDeCerca( interactuable ):
     $ interactuable.fueInteractuado = True
-    show screen interactuableDeCerca( interactuable.rutaDeCerca )
+    play sound interactuable.sfx
+    show screen interactuableDeCerca( interactuable.rutaDeCerca ) with Fade(0.25,0.0,0.25)    
+    pause .5
 
     call expression interactuable.descripcion from _call_expression
-
     hide screen interactuableDeCerca
     return
 

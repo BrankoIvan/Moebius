@@ -49,11 +49,11 @@ label inicializacionDeVariables:
         destino = None
         visitadotunelCerrado = False
         
-        cartel = Interactuable(exCartel, (298,445), exCartelCerca, "descripcionCartel")
-        poster = Interactuable(exPoster, (586,391), exPosterCerca, "descripcionPoster")
+        cartel = Interactuable(exCartel, (298,445), exCartelCerca, "descripcionCartel", audio.sfx_Cartel)
+        poster = Interactuable(exPoster, (586,391), exPosterCerca, "descripcionPoster", audio.sfx_Poster)
         
-        cigarrillos = Item(exCigarrillos, (1264,354), exCigarrillosCerca, "descripcionCigarrillos", exCigarrillosInventario)
-        caramelos = Item("", (151,826), "", "descripcionCaramelos", exCaramelosInventario)
+        cigarrillos = Item(exCigarrillos, (1264,354), exCigarrillosCerca, "descripcionCigarrillos", audio.sfx_Cigarillos, exCigarrillosInventario)
+        caramelos = Item("", (151,826), "", "descripcionCaramelos", audio.sfx_Caramelos, exCaramelosInventario)
     
     return
 
