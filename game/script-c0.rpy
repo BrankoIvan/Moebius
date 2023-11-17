@@ -26,7 +26,7 @@ label cabina:
         $ renpy.call("c0escena" + str(escena))
         $ escena += cambio
     
-    if escena == 10:
+    if escena == 11:
         jump ending
 
     while destino == None:
