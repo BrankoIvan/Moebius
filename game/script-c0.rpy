@@ -420,7 +420,6 @@ label c0escena3:
     return
 
 label c0escena4:
-    #scene anden_1 
     play music bgm_Anden1 fadeout 1.0 fadein 1.0 loop volume 1
     Narrador "El andén del subte es un abismo sin fondo que se abre a la oscuridad."
     Narrador "Los viejos asientos de madera se alinean a lo largo del andén, vacíos y desgastados por el tiempo."

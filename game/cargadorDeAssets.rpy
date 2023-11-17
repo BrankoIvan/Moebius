@@ -141,6 +141,8 @@ define audio.sfx_Risa = sfx + "SFX Risa maníaca.mp3"
 define audio.sfx_Subte_Frenando = sfx + "SFX Subte frenando.mp3"
 define audio.sfx_Subte_Yendose = sfx + "SFX Subte yéndose.mp3"
 define audio.sfx_Voces = sfx + "SFX Voces se desvanecen en el subte.mp3"
+define audio.sfx_Camara = sfx + "SFX Cámara.mp3"
+
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Extras
