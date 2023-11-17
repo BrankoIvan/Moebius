@@ -73,6 +73,8 @@ image bg vias_3 = backgroundse1 + "vias_3.jpg"
 
 # Fondos Animados
 
+image bg sueño_2 = Movie(play= movies + "sueño_1.webm")
+image bg sueño_1 = Movie(play= movies + "sueño_2.webm")
 image bg vagon = Movie(play= movies + "vagon.webm")
 image bg anden_1 = Movie(play= movies + "anden_1.webm")
 image bg despertar = Movie(play = movies + "despertar.webm")
@@ -82,7 +84,7 @@ image bg opening_1 = Movie(play = movies + "opening_1.webm")
 image bg opening_2 = Movie(play = movies + "opening_2.webm")
 image bg opening_3 = Movie(play = movies + "opening_3.webm")
 image bg opening_4 = Movie(play = movies + "opening_4.webm")
-image bg ojos_cerrados = Movie(play = movies + "cerrar_ojos.webm")
+image bg cerrar_ojos = Movie(play = movies + "cerrar_ojos.webm")
 image bg sucumbir_oscuridad = Movie(play = movies + "sucumbir_oscuridad.webm")
 image bg puerta_abriendo = Movie(play= movies + "puerta_abriendo.webm", loop=False, image= movies + "puerta_abriendo_fix.jpg")
 image bg subte_viaje = Movie(play= movies + "subte_viaje.webm")

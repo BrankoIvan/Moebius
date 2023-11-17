@@ -206,27 +206,25 @@ label puerta_cerrada:
 # Historia
 
 label intro:
-    scene bg opening_1 with fade_comun
+    scene bg cerrar_ojos with fade_comun
     play music bgm_Tren_Llegando fadeout 1.0 fadein 1.0 loop volume 2
 
-    #NOSE SI ESTAN BIEN LOS FONDOS
     Narrador "Estás volviendo de una larga jornada laboral en el subte que habitualmente tomas..." 
     Narrador "La línea A de Buenos Aires."
     Narrador "La fatiga te vence y te quedás dormido."
     
-    scene bg opening_2 with fade_comun
+    scene bg sueño_1 with fade_comun
     
     Narrador "Soñás en la niebla de la memoria, con rostros que son relámpagos de antaño."
+
+    scene bg sueño_2 with fade_comun
+
     Narrador "Con vínculos rotos y destellos de amores pasados."
     
-    scene bg opening_3 with fade_comun
+    scene bg cerrar_ojos with fade_comun
      
     Narrador "El ser humano se encuentra en un viaje onírico..."
     Narrador "Una danza sin fin por las profundidades más oscuras de su ser."
- 
-    
-    scene bg opening_4 with fade_comun
-    
     Narrador "En ese rincón entre el deseo y el horror, la conciencia se manifiesta, susurrando desde un abismo insondable."
     Narrador "¿Qué impulsa el rumbo de tu existencia?"
     
@@ -261,17 +259,20 @@ label intro:
             Narrador "¿Querés vengarte de los que te han hecho daño, o perdonarlos y seguir adelante?"
             pass
         
-    scene bg despertar with fade_comun
-    
+    scene bg opening_1 with fade_comun
     Narrador "Te despertás abruptamente en el vagón del subte."
     Narrador "Todos los pasajeros que te rodeaban desaparecieron misteriosamente."
+    scene bg opening_2 with fade_comun
     Narrador "El aire es frío y húmedo, y parece impregnado de algo extraño..."
     Narrador "Algo que no podrías identificar."
+    scene bg opening_3 with fade_comun
     play audio sfx_Voces fadeout 1.0 fadein 1.0 volume 1.5
     Narrador "Cansado, buscás reconocer un entorno que se muestra anormal, casi onírico..."
     Narrador "Que sugiere realidades incomprensibles."
     Narrador "Los asientos de plástico parecen más incómodos que nunca..."
+    scene bg opening_4 with fade_comun
     Narrador "Y el constante traqueteo del tren, esa sinfonía mecánica, es ahora tu única compañía."
+    scene bg despertar with fade_comun
     play audio sfx_Subte_Frenando fadeout 1.0 fadein 1.0 volume 1.5
     Narrador "Una tenue luz se filtra desde las lámparas del vagón, bañando todo de un resplandor particular."
 
@@ -282,8 +283,7 @@ label intro:
         "Seguir durmiendo":
             pass
     
-    scene bg ojos_cerrados with fade_comun
-    
+    scene bg cerrar_ojos with fade_comun
     play music bgm_Vagon fadeout 1.0 fadein 1.0 loop volume 1.5
     Protagonista "Solo un poco mas de sueño..."
 
@@ -313,13 +313,14 @@ label intro:
 
     Narrador "El subte es ahora tu sepulcro, y vos sos el prisionero condenado a una pesadumbre eterna,donde el eco de una risa maníaca resuena en el abismo."
 
-    menu:        
+    menu:      
         "Sucumbir a la oscuridad":
             pass
     
     jump BadEnding
 
 label c0escena1:
+
     play music bgm_Vagon fadeout 1.0 fadein 1.0 loop volume 1
     Narrador "Decidís que es hora de ponerte de pie." 
     Narrador "Te estiras y bostezas, estirando los músculos rígidos después de un largo día."
@@ -338,6 +339,7 @@ label c0escena1:
     return
 
 label c0escena2:
+
     play music bgm_Cabina fadeout 1.0 fadein 1.0 loop volume 1
     Narrador "La cabina del maquinista se extiende frente tuyo, una maraña de controles y palancas en un espacio reducido"
     Narrador "Los controles están manchados de grasa y, en el rincón, ves montones de envoltorios de caramelos."
@@ -401,7 +403,7 @@ label c0escena2:
     Protagonista "O la única que su alma pueda soportar decir..."  
             
     hide spr maquinista with dissolve
-
+    #probar poner la puerta abriendo aca a ver si no aparece el minisalto?
     return
 
 label c0escena3:
@@ -418,6 +420,7 @@ label c0escena3:
     return
 
 label c0escena4:
+    #scene anden_1 
     play music bgm_Anden1 fadeout 1.0 fadein 1.0 loop volume 1
     Narrador "El andén del subte es un abismo sin fondo que se abre a la oscuridad."
     Narrador "Los viejos asientos de madera se alinean a lo largo del andén, vacíos y desgastados por el tiempo."
