@@ -26,6 +26,7 @@ default preferences.text_cps = 40
 define escena = None
 define destino = None
 define visitadotunelCerrado = None
+define karma = 0
 
 define fadetime = 0.1
 define fade_comun = Fade(fadetime, 0.0, fadetime)

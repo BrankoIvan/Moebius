@@ -207,21 +207,42 @@ label intro:
     scene bg opening_1 with fade_comun
     play music bgm_Tren_Llegando fadeout 1.0 fadein 1.0 loop volume 2
 
-    Narrador "Estás volviendo de una larga jornada laboral en el subte que habitualmente tomas: la línea A de Buenos Aires."
-    Narrador "Te quedaste dormido."
+    #NOSE SI ESTAN BIEN LOS FONDOS
+    Narrador "Estás volviendo de una larga jornada laboral en el subte que habitualmente tomas..." 
+    Narrador "La línea A de Buenos Aires."
+    Narrador "La fatiga te vence y te quedás dormido."
     
     scene bg opening_2 with fade_comun
     
-    Narrador "El traqueteo constante de las ruedas contra los rieles crea una sinfonía mecánica que te acompaña hace varios años."
+    Narrador "Soñás en la niebla de la memoria, con rostros que son relámpagos de antaño."
+    Narrador "Con vínculos rotos y destellos de amores pasados."
     
     scene bg opening_3 with fade_comun
      
-    Narrador "Mientras el tren se desliza por debajo de la tierra, los sonidos del mundo exterior se desvanecen gradualmente."
+    Narrador "El ser humano se encuentra en un viaje onírico..."
+    Narrador "Una danza sin fin por las profundidades más oscuras de su ser."
+ 
     
     scene bg opening_4 with fade_comun
     
-    Narrador "La brisa caliente de la noche te acaricia el rostro, pero no te da consuelo, sino una extraña sensación de opresión."
+    Narrador "En ese rincón entre el deseo y el horror, la conciencia se manifiesta, susurrando desde un abismo insondable…"
+    Narrador "¿Qué impulsa el rumbo de tu existencia?"
     
+    menu:
+        "Destino":
+            $ karma = +1 
+            Narrador "¿El destino está escrito en las estrellas, o es solo una ilusión?"
+            pass
+        "Elección":
+            $ karma = +0
+            Narrador "¿Sos el dueño de tu propio destino, o estás a merced de las circunstancias?"
+            pass
+        "Caos":
+            $ karma = -1
+            Narrador "¿El universo es un lugar aleatorio e impredecible, o hay un orden oculto que lo rige?"
+            pass     
+        
+
     scene bg despertar with fade_comun
     
     Narrador "Despertas de golpe, transpirado."
