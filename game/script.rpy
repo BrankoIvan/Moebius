@@ -21,11 +21,17 @@ define Guardia = Character("Guardia",
     color = "#ff28288c",
     callback=voz_lenta)
 
+define Alma_perdida = Character("???", 
+    color = "#ff28288c",
+    callback=voz_lenta)
+
 default preferences.text_cps = 40
 
 define escena = None
+define cambio = None
 define destino = None
 define visitadotunelCerrado = None
+define camara_menu_option1 = True
 define karma = 0
 
 define fadetime = 0.1
@@ -36,6 +42,7 @@ define cartel = None
 define poster = None
 define cigarrillos = None
 define caramelos = None
+define camara = None
 
 label start:
     scene black
@@ -55,6 +62,7 @@ label inicializacionDeVariables:
         
         cigarrillos = Item(exCigarrillos, (1264,354), exCigarrillosCerca, "descripcionCigarrillos", audio.sfx_Cigarillos, exCigarrillosInventario)
         caramelos = Item("", (151,826), "", "descripcionCaramelos", audio.sfx_Caramelos, exCaramelosInventario)
+        camara = Item("", (151,826), "", "descripcionCaramelos", audio.sfx_Caramelos, exCaramelosInventario)
     
     return
 
