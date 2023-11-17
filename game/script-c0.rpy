@@ -241,20 +241,37 @@ label intro:
             $ karma = -1
             Narrador "¿El universo es un lugar aleatorio e impredecible, o hay un orden oculto que lo rige?"
             pass     
-        
+    
+    Narrador "¿Qué inflama el latido de tu corazón, cuál llama ardiente guía tus pasos hacia el horizonte desconocido?"
 
+    menu:
+        
+        "La compasión por los demás.":
+            $ karma = +1 
+            Narrador "¿Querés ayudar a los demás, o hacer del mundo un lugar mejor?"
+            pass 
+        "La búsqueda de la verdad.":
+            $ karma = +0
+            Narrador "¿Querés comprender el mundo que te rodea, o descubrir los secretos del universo?"
+            pass
+        "La venganza":
+            $ karma = -1
+            Narrador "¿Querés vengarte de los que te han hecho daño, o perdonarlos y seguir adelante?"
+            pass
+        
     scene bg despertar with fade_comun
     
-    Narrador "Despertas de golpe, transpirado."
-    Narrador "El clima pesa sobre tus hombros. Tu cuerpo, sumido en la fatiga, descansa contra los incómodos asientos de plástico."
-    Narrador "Tus párpados te pesan, pero no podes volver a cerrarlos."
+    Narrador "Te despertás abruptamente en el vagón del subte."
+    Narrador "Todos los pasajeros que te rodeaban desaparecieron misteriosamente."
+    Narrador "El aire es frío y húmedo, y parece impregnado de algo extraño..."
+    Narrador "Algo que no podrías identificar."
     play audio sfx_Voces fadeout 1.0 fadein 1.0 volume 1.5
-    Narrador "Una tenue luz azulada se filtra desde las lámparas del vagón, bañando todo de un resplandor particular."
-    Narrador "Las voces que normalmente llenan el subte con su murmullo constante han desaparecido, dejando un silencio ensordecedor en su lugar."
-    Narrador "El aire se espesa con una tensión palpable, como si algo oscuro acechara en las sombras de Buenos Aires."
+    Narrador "Cansado, buscás reconocer un entorno que se muestra anormal, casi onírico..."
+    Narrador "Que sugiere realidades incomprensibles."
+    Narrador "Los asientos de plástico parecen más incómodos que nunca..."
+    Narrador "Y el constante traqueteo del tren, esa sinfonía mecánica, es ahora tu única compañía."
     play audio sfx_Subte_Frenando fadeout 1.0 fadein 1.0 volume 1.5
-    Narrador "Abrís los ojos en un escenario peculiar: el interior del último subte, uno de esos vagones destartalados."
-    Narrador "Un escalofrío te recorre la espalda, y te das cuenta de que esta noche, tu viaje de regreso no será el habitual."
+    Narrador "Una tenue luz se filtra desde las lámparas del vagón, bañando todo de un resplandor particular."
 
     menu:
         "Ponerse de pie":
@@ -270,7 +287,7 @@ label intro:
 
     menu:
         
-        "Abrir los ojos":
+        "Ponerse de pie":
             jump vagon
         
         "Seguir durmiendo":
@@ -302,18 +319,20 @@ label intro:
 
 label c0escena1:
     play music bgm_Vagon fadeout 1.0 fadein 1.0 loop volume 1
-    Narrador "Decidís que es hora de ponerte de pie. Te estiras y bostezas, estirando los músculos rígidos después de un largo día."
-    Narrador "Tu mirada, lenta y pesada, se posa en la única fuente de luz en la penumbra que te rodea: una puerta solitaria, iluminada en medio de la oscuridad."
-    Narrador "Miras a tu alrededor y notas que el vagón está vacío. Todos los pasajeros que te rodeaban desaparecieron misteriosamente."
-    
+    Narrador "Decidís que es hora de ponerte de pie." 
+    Narrador "Te estiras y bostezas, estirando los músculos rígidos después de un largo día."
+    Narrador "Tu mirada, lenta y pesada, se posa en la única fuente de luz en la penumbra que te rodea..." 
+    Narrador "Una puerta solitaria, iluminada en medio de la oscuridad."
+        
     scene bg puerta_vagon_cerrada with fade_comun
 
-    Narrador "La puerta está cerrada. Estás atrapado en el subte y no podés evitar sentir una oleada de ansiedad que recorre tu espina dorsal."
+    Narrador "La puerta está cerrada." 
+    Narrador "Estás atrapado en el subte y no podés evitar sentir una oleada de ansiedad que recorre tu espina dorsal."
 
     scene bg vagon with fade_comun
     
-    Protagonista "¡¿Hola? ¿Hay alguien ahí?"  
-    
+    Protagonista "¡¿Hola? ¿Hay alguien ahí?¡Estoy atrapado en el subte!"
+        
     return
 
 label c0escena2:
@@ -328,23 +347,47 @@ label c0escena2:
     Narrador "El maquinista se gira lentamente en su silla hacia vos."
     
     menu:
-        "¡Hola, loco! ¿Qué onda? ¿Por qué está cerrada la puerta? ¿Este subte es el último de la noche, che? ¿Dónde mierda estoy?":
+        "¿Me podrías ayudar? Estoy perdido.":
+            $ karma = +1
+            Protagonista "Buenas noches, ¿Cómo le va? Me quedé dormido y no sé donde estoy ¿Podrías ayudarme?"
             pass
-   
-    Maquinista "D u l c e . . ."
+        "¿Cuándo vuelve a andar el subte?":
+            $ karma = +0
+            Protagonista "Buenas noches, ¿Tenés idea si este era el último subte? ¿Cómo puedo irme?"
+            pass
+        "¿Por qué estoy encerrado acá?":
+            $ karma = -1
+            Protagonista "Disculpame ¿Acaso es normal encerrar pasajeros dentro del subte?"
+            pass
+
+    
+
+    Maquinista "C a r a m e l o s . . ."
 
     menu:
-        "Caramelos... ¿Estás hablando en serio? Necesito respuestas, no caramelos. ¿Qué está pasando?":
-            Maquinista "D u l c e..."
-            Protagonista "Tomatela, rarito..."
+        "¿Querés caramelos?":
+            $ karma = +1
+            Protagonista "¿Caramelos? Puedo traértelos pero necesitaría salir del vagón…"
+            pass
 
-        "Esto no es gracioso. Si no me decís lo que necesito saber, puedo volverte la vida un infierno, amigo.":
-            Maquinista "D u l c e..."
-            Protagonista "Tomatela, rarito..."
+        "¿Qué querés decir con caramelos?":
+            $ karma = +0
+            Protagonista "¿Qué significa esto? No entiendo para qué los querés…"
+            pass
 
-        "¿Caramelos, decís? Che, ¿tenemos que hacer algo con golosinas para que esto funcione?":
-            Maquinista "D u l c e..."
-            Protagonista "Bueno... está bien... Gracias, amigo."
+        "¿Caramelos? No tengo…":
+            $ karma = -1
+            Protagonista "No te voy a dar caramelos, pero necesito respuestas. ¿Por qué necesitas esos caramelos?"
+            pass
+
+    Maquinista "C a r a m e l o s . . ."
+
+    menu:
+        "¿Por qué?":
+            Protagonista "¿Por qué solo decís “caramelos”?"
+            Protagonista "No entiendo..."
+
+        
             
     hide spr maquinista with dissolve
 
