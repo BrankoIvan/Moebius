@@ -138,8 +138,10 @@ label tunelCerrado:
     
 
     if visitadotunelCerrado == False:
-        Protagonista "La puta madre."
+        Protagonista "Tendré que salir por otro lado."
         $ visitadotunelCerrado = True
+    else:
+        Protagonista "..."
 
     if escena in []:
         $ renpy.call("c0escena" + str(escena))
@@ -225,7 +227,7 @@ label intro:
     
     scene bg opening_4 with fade_comun
     
-    Narrador "En ese rincón entre el deseo y el horror, la conciencia se manifiesta, susurrando desde un abismo insondable…"
+    Narrador "En ese rincón entre el deseo y el horror, la conciencia se manifiesta, susurrando desde un abismo insondable."
     Narrador "¿Qué impulsa el rumbo de tu existencia?"
     
     menu:
@@ -242,7 +244,7 @@ label intro:
             Narrador "¿El universo es un lugar aleatorio e impredecible, o hay un orden oculto que lo rige?"
             pass     
     
-    Narrador "¿Qué inflama el latido de tu corazón, cuál llama ardiente guía tus pasos hacia el horizonte desconocido?"
+    Narrador "¿Qué inflama el latido de tu corazón? ¿Cuál llama ardiente guía tus pasos hacia el horizonte desconocido?"
 
     menu:
         
@@ -349,7 +351,7 @@ label c0escena2:
     menu:
         "¿Me podrías ayudar? Estoy perdido.":
             $ karma = +1
-            Protagonista "Buenas noches, ¿Cómo le va? Me quedé dormido y no sé donde estoy ¿Podrías ayudarme?"
+            Protagonista "Buenas noches ¿Cómo le va? Me quedé dormido y no sé donde estoy ¿Podrías ayudarme?"
             pass
         "¿Cuándo vuelve a andar el subte?":
             $ karma = +0
@@ -367,7 +369,7 @@ label c0escena2:
     menu:
         "¿Querés caramelos?":
             $ karma = +1
-            Protagonista "¿Caramelos? Puedo traértelos pero necesitaría salir del vagón…"
+            Protagonista "¿Caramelos? Puedo traértelos pero necesitaría salir del vagón..."
             pass
 
         "¿Qué querés decir con caramelos?":
@@ -384,10 +386,19 @@ label c0escena2:
 
     menu:
         "¿Por qué?":
-            Protagonista "¿Por qué solo decís “caramelos”?"
-            Protagonista "No entiendo..."
+            pass
 
-        
+    Protagonista "¿Por qué solo decís “caramelos”?"
+    Protagonista "No entiendo..."
+    
+    Maquinista "C a"
+    Maquinista "r a"
+    Maquinista "m e"
+    Maquinista "l o s ..."
+
+    Protagonista "Parece que es lo único que puede pronunciar."     
+    Protagonista "Como si fuera la única cosa que su mente es capaz de recordar."
+    Protagonista "O la única que su alma pueda soportar decir..."  
             
     hide spr maquinista with dissolve
 
@@ -396,47 +407,49 @@ label c0escena2:
 label c0escena3:
     scene bg puerta_abriendo with fade_comun
     play audio sfx_Puerta fadeout 1.0 fadein 1.0 volume 1
-    Protagonista "Al menos me abrió la puerta..."
+
+    Narrador "La puerta se abre."
+    Protagonista "¿Será obra del maquinista o acaso una fuerza innombrable alteró esta escena?"
 
     scene bg vagon with fade_comun
+
+    pass
 
     return
 
 label c0escena4:
     play music bgm_Anden1 fadeout 1.0 fadein 1.0 loop volume 1
-    Narrador "Finalmente, te aventuras fuera del vagón y te encontras en el andén de la estación."
-    Narrador "Debería estar lleno de gente esperando el tren, pero la soledad te envuelve."
+    Narrador "El andén del subte es un abismo sin fondo que se abre a la oscuridad."
     Narrador "Los viejos asientos de madera se alinean a lo largo del andén, vacíos y desgastados por el tiempo."
+    Narrador "Las luces apenas iluminan los rincones proyectando extrañas sombras."
     Narrador "Un eco lejano de tus propios pasos es lo único que rompe el silencio en este lugar abandonado."
     
     return
 
 label c0escena5:
     play music bgm_Tunel1 fadeout 1.0 fadein 1.0 loop volume 1
-    Narrador "Una figura, apenas perceptible, acecha en el confín del pasillo"
-    Narrador "Sus contornos se desdibujan en la penumbra, pero su presencia es innegable."
+    Narrador "Algo se mueve en la oscuridad."
+    Narrador "Una sombra espesa que desafía la lógica y la percepción humana."
+    Narrador "Como si fuese una manifestación de un rincón olvidado de la realidad."
+    Narrador "Una entidad pareciera aguardar paciente en el abismo entre el mundo conocido y lo desconocido."
     Narrador "La sensación de que alguien o algo te observa te eriza la piel."
-    Narrador "La figura permanece quieta como una estatua en medio de la oscuridad, esperando, observando."
     Narrador "Tu corazón late con fuerza y sentís un nudo en el estómago."
 
     return
 
 label c0escena6:
     play music bgm_Puertas_Cerradas fadeout 1.0 fadein 1.0 loop volume 1
-    Narrador "La puerta de salida, que normalmente estaría abierta a esta hora, está sellada con una barrera de acero."
-    Narrador "La frustración te invade; el agotamiento de la larga jornada te carcome y tu paciencia llega a su límite."
-    Narrador "El sueño te arrebata la cordura, y te preguntas cómo has llegado a esta situación absurda."
-    Narrador "Las palabras de descontento fluyen de tus labios, maldecidas por tu cansancio."
-    Protagonista "¡La concha de la lora, no puede ser! ¿Qué mierda pasa con esta puerta, eh?"
-    Narrador "Las luces parpadeantes del andén arrojan una sombra intermitente sobre la puerta cerrada, como si se burlaran de tu impotencia."
-    Narrador "Estás atrapado en este lugar desconcertante, y la realidad comienza a desdibujarse mientras la fatiga se apodera de vos."
+    Protagonista "¡La puta madre! ¿Y ahora cómo salgo?"
+    Narrador "El aire pesado se adhiere a tus pulmones."
+    Narrador "Se posan en esa puerta cerrada."
+    Narrador "Un muro impenetrable que desafía tu libertad."
 
     return
 
 label c0escena7:
     play music bgm_Escaleras fadeout 1.0 fadein 1.0 loop volume 1
     Narrador "Después de atravesar el oscuro pasillo, te encontrás al pie de las escaleras."
-    Narrador "La presencia extraña que lo ace   cha se vuelve más intensa a medida que se acerca."
+    Narrador "La presencia extraña que lo acecha se vuelve más intensa a medida que se acerca."
     
     
     show spr seguridad with dissolve

@@ -74,10 +74,10 @@ label descripcionCigarrillos:
     Protagonista "Cerrados, y de mi marca favorita."
 
     menu:
-        "tomar":
+        "Tomar":
             $ cigarrillos.agregarAlInvetario()
         
-        "dejar":
+        "Dejar":
             pass
 
     return
