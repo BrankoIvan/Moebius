@@ -23,7 +23,7 @@ define Guardia = Character("Guardia",
 
 define Alma_perdida = Character("???", 
     color = "#ff28288c",
-    callback=voz_alma)
+    callback=voz_dario)
 
 default preferences.text_cps = 40
 
