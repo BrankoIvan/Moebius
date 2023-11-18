@@ -22,8 +22,8 @@ image spr maquinista:
     xzoom 1.0 yzoom 1.0
     xalign 0.5 yalign 1.0
 
-image spr guardia:
-    #sprites + "guardia.png"
+image spr alma:
+    sprites + "NPC_ALMA_PERDIDA.png"
     xzoom 1.0 yzoom 1.0
     xalign 0.5 yalign 1.9
 
@@ -34,20 +34,20 @@ image spr guardia:
 # Fondos Mapa
 
 #e0
-image bg cabina = backgrounds + "cabina.jpg"
 image bg anden_2 = backgrounds + "anden_2.jpg"
 image bg anden_fondo = backgrounds + "anden_fondo.jpg"
-image bg tunel_1 = backgrounds + "tunel_1.jpg"
 image bg tunel_2 = backgrounds + "tunel_2.jpg"
 image bg baño = backgrounds + "baño.jpg"
+image bg baño_2 = backgrounds + "baño_2.jpg"
 image bg puerta_vagon_cerrada = backgrounds + "vagon_salida_cerrada.jpg"
-image bg salida_cerrada = backgrounds + "salida_cerrada.jpg"
+image bg salida_cerrada = backgrounds + "puerta_cerrada.jpg"
 image bg oscuridad = backgrounds + "oscuridad.jpg"
+image bg vias = backgrounds + "vias_1.jpg"
 
 #c1
 image bg anden_frente_1 = backgroundse1 + "anden_frente_1.jpg"
 image bg anden_frente_2 = backgroundse1 + "anden_frente_2.jpg"
-image bg baño_2 = backgroundse1 + "baño_2.jpg"
+image bg c1_baño_2 = backgroundse1 + "baño_2.jpg"
 image bg conexión_1 = backgroundse1 + "conexión_1.jpg"
 image bg c1_anden_1 = backgroundse1 + "c1_anden_1.jpg"
 image bg c1_anden_2 = backgroundse1 + "c1_anden_2.jpg"
@@ -79,6 +79,8 @@ image bg vagon = Movie(play= movies + "vagon.webm")
 image bg anden_1 = Movie(play= movies + "anden_1.webm")
 image bg despertar = Movie(play = movies + "despertar.webm")
 image bg escalera = Movie(play = movies + "escalera.webm")
+image bg cabina = Movie(play = movies + "cabina.webm")
+image bg tunel_1 = Movie(play = movies + "tunel_1.webm")
 
 image bg opening_1 = Movie(play = movies + "opening_1.webm")
 image bg opening_2 = Movie(play = movies + "opening_2.webm")
@@ -134,8 +136,10 @@ define audio.musica_maquinista = music + "Música Maquinista.mp3"
 define audio.sfx_Caramelos = sfx + "SFX Agarrar caramelos_ entregar caramelos.mp3"
 define audio.sfx_Cigarillos = sfx + "SFX Agarrar Cigarrillos.mp3"
 define audio.sfx_Cartel = sfx + "SFX Interacción Cartel.mp3"
+define audio.sfx_Cartel_Vacio = sfx + "SFX Interacción Cartel.mp3"
 define audio.sfx_Espejo = sfx + "SFX Interacción Espejo en baño.mp3"
 define audio.sfx_Poster = sfx + "SFX Interacción Poster.mp3"
+define audio.sfx_Mochila = sfx + "SFX Mochila.mp3"
 define audio.sfx_Puerta = sfx + "SFX La puerta del subte se abre.mp3"
 define audio.sfx_Risa = sfx + "SFX Risa maníaca.mp3"
 define audio.sfx_Subte_Frenando = sfx + "SFX Subte frenando.mp3"
@@ -151,12 +155,26 @@ define exCigarrillos = extras + "cigarrillos_%s.png"
 define exCigarrillosCerca = extras + "cigarrillos_zoom.png"
 define exCigarrillosInventario = extras + "cigarrillos_ui.png"
 
+define exCamara = extras + "camara_%s.png"
+define exCamaraCerca = extras + "camara_zoom.png"
+define exCamaraInventario = extras + "camara_ui.png"
+
+define exCaramelosInventario = extras + "caramelos_ui.png"
+
 define exCartel = extras + "cartel_anden_%s.png"
 define exCartelCerca = extras + "cartel_anden_zoom.png"
+
+define exCartelVacio = extras + "cartel_vacio_%s.png"
+define exCartelVacioCerca = extras + "cartel_vacio_zoom.png"
 
 define exPoster = extras + "poster_%s.png"
 define exPosterCerca = extras + "poster_zoom.png"
 
-define exCaramelosInventario = extras + "caramelos_ui.png"
+define exEspejo = extras + "espejo_%s.png"
+define exEspejoCerca = extras + "espejo_zoom.png"
+
+define exMochila = extras + "mochila_%s.png"
+define exMochilaCerca = extras + "mochila_zoom.png"
+
 
 

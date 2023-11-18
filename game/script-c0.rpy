@@ -63,6 +63,7 @@ label tunel2:
     
     while destino == None:
         window hide
+        $ mochila.mostrar()
         show screen flechasDeNavegacion("tunelCerrado","","anden1","")
         pause
     
@@ -113,23 +114,57 @@ label baño:
 
     while destino == None:
         window hide
-        $ cigarrillos.mostrar()
-        show screen flechasDeNavegacion("","","anden_fondo","")
+        $ espejo.mostrar()
+        show screen flechasDeNavegacion("","","anden_fondo","baño_2")
+        pause
+    
+    jump expression destino
+
+label baño_2:
+    $ destino = None
+    scene bg baño_2 with fade_comun
+    play music bgm_Baño fadeout 1.0 fadein 1.0 loop volume 1
+    
+    if escena in []:
+        $ renpy.call("c0escena" + str(escena))
+        $ escena += cambio
+
+    while destino == None:
+        window hide
+        $ camara.mostrar()
+        show screen flechasDeNavegacion("","","baño","")
         pause
     
     jump expression destino
 
 label vias:
+    $ destino = None
+    scene bg vias with fade_comun
+    play music bgm_Vias fadeout 1.0 fadein 1.0 loop volume 1
+
+    if escena in []:
+        $ renpy.call("c0escena" + str(escena))
+        $ escena += cambio
+    
+    while destino == None:
+        window hide
+        $ cigarrillos.mostrar()
+        show screen flechasDeNavegacion("vias_2","","","anden_fondo")
+        pause
+    
+    jump expression destino
+
+label vias_2:
     scene black with fade_comun
     play music bgm_Vias fadeout 1.0 fadein 1.0 loop volume 1
 
-    Protagonista "Esta muy oscuro, es peligroso."
+    Protagonista "Está muy oscuro, es peligroso."
 
     if escena in []:
         $ renpy.call("c0escena" + str(escena))
         $ escena += cambio
 
-    jump anden_fondo
+    jump vias
 
 label tunelCerrado:
     $ destino = None
@@ -149,6 +184,7 @@ label tunelCerrado:
     
     while destino == None:
         window hide
+        $ cartel_vacio.mostrar()
         show screen flechasDeNavegacion("","","tunel2","")
         pause
     
@@ -197,6 +233,7 @@ label puerta_cerrada:
 
     while destino == None:
         window hide
+        $ cartel_vacio.mostrar()
         show screen flechasDeNavegacion("","","escalera","")
         pause
     
@@ -209,7 +246,7 @@ label intro:
     scene bg cerrar_ojos with fade_comun
     play music bgm_Tren_Llegando fadeout 1.0 fadein 1.0 loop volume 2
 
-    Narrador "Estás volviendo de una larga jornada laboral en el subte que habitualmente tomas..." 
+    Narrador "Estás volviendo de una larga jornada laboral en el subte que habitualmente tomás..." 
     Narrador "La línea A de Buenos Aires."
     Narrador "La fatiga te vence y te quedás dormido."
     
@@ -323,7 +360,7 @@ label c0escena1:
 
     play music bgm_Vagon fadeout 1.0 fadein 1.0 loop volume 1
     Narrador "Decidís que es hora de ponerte de pie." 
-    Narrador "Te estiras y bostezas, estirando los músculos rígidos después de un largo día."
+    Narrador "Te estirás y bostezás, estirando los músculos rígidos después de un largo día."
     Narrador "Tu mirada, lenta y pesada, se posa en la única fuente de luz en la penumbra que te rodea..." 
     Narrador "Una puerta solitaria, iluminada en medio de la oscuridad."
         
@@ -396,9 +433,9 @@ label c0escena2:
     Maquinista "m e"
     Maquinista "l o s ..."
 
-    Protagonista "Parece que es lo único que puede pronunciar."     
-    Protagonista "Como si fuera la única cosa que su mente es capaz de recordar."
-    Protagonista "O la única que su alma pueda soportar decir..."  
+    Narrador "Parece que es lo único que puede pronunciar."     
+    Narrador "Como si fuera la única cosa que su mente es capaz de recordar."
+    Narrador "O la única que su alma pueda soportar decir..."  
             
     hide spr maquinista with dissolve
     #probar poner la puerta abriendo aca a ver si no aparece el minisalto?    
@@ -410,7 +447,7 @@ label c0escena3:
     play audio sfx_Puerta fadeout 1.0 fadein 1.0 volume 1
 
     Narrador "La puerta se abre."
-    Protagonista "¿Será obra del maquinista o acaso una fuerza innombrable alteró esta escena?"
+    Narrador "¿Será obra del maquinista o acaso una fuerza innombrable alteró esta escena?"
 
     scene bg vagon with fade_comun
 
@@ -464,6 +501,8 @@ label c0escena7:
         Narrador "Parece que no vas a tener otra respuesta"
         $ cambio = 0
         return
+
+    show spr alma with dissolve
 
     menu:
         "¿Estás bien?":
