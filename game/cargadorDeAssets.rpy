@@ -43,6 +43,7 @@ image bg puerta_vagon_cerrada = backgrounds + "vagon_salida_cerrada.jpg"
 image bg salida_cerrada = backgrounds + "puerta_cerrada.jpg"
 image bg oscuridad = backgrounds + "oscuridad.jpg"
 image bg vias = backgrounds + "vias_1.jpg"
+image bg continuara = backgrounds + "continuara.jpg"
 
 #c1
 image bg anden_frente_1 = backgroundse1 + "anden_frente_1.jpg"
