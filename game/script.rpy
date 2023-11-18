@@ -59,6 +59,8 @@ label inicializacionDeVariables:
         escena = 1
         destino = None
         visitadotunelCerrado = False
+
+        Item.inventario = []
         
         cartel = Interactuable(exCartel, (375,450), exCartelCerca, "descripcionCartel", audio.sfx_Cartel)
         poster = Interactuable(exPoster, (586,391), exPosterCerca, "descripcionPoster", audio.sfx_Poster)
