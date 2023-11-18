@@ -1,8 +1,10 @@
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 # Clases y Funciones
 
-define voces_lentas = ['audio/B1.ogg', 'audio/B2.ogg', 'audio/B3.ogg', 'audio/B4.ogg', 'audio/B5.ogg']
-define voces_rapidas = ['audio/A1.ogg', 'audio/A2.ogg', 'audio/A3.ogg', 'audio/A4.ogg', 'audio/A5.ogg']
+define voz_de_prota = ['audio/B1 Narrador_prota.mp3', 'audio/B2 Narrador_prota.mp3', 'audio/B3 Narrador_prota.mp3', 'audio/B4 Narrador_prota.mp3', 'audio/B5 Narrador_prota.mp3']
+define voz_de_dario = ['audio/B1 Darío.mp3', 'audio/B2 Darío.mp3', 'audio/B3 Darío.mp3', 'audio/B4 Darío.mp3', 'audio/B5 Darío.mp3']
+define voz_de_alma = ['audio/B1 Alma_perdida.mp3', 'audio/B2 Alma_perdida.mp3', 'audio/b3 Alma_perdida.mp3', 'audio/B4 Alma_perdida.mp3', 'audio/B5 Alma_perdida.mp3']
+define voz_de_guardia = ['audio/A1 Guardia.mp3', 'audio/A2 Guardia.mp3', 'audio/A3 Guardia.mp3', 'audio/A4 Guardia.mp3']
 
 init python:
     class Interactuable:
@@ -54,13 +56,23 @@ init python:
 
     renpy.music.register_channel ("music2", mixer = "music", loop = True, stop_on_mute = True, tight = False, file_prefix = '', file_suffix = '', buffer_queue = True )
 
-    def voz_lenta(event, interact=True, **kwargs):
-        if interact: voz(event, voces_lentas)
+    def voz_prota(event, interact=True, **kwargs):
+        if interact: voz(event, voz_de_prota)
         
         return
         
-    def voz_rapida(event, interact=True, **kwargs):
-        if interact: voz(event, voces_rapidas)
+    def voz_guardia(event, interact=True, **kwargs):
+        if interact: voz(event, voz_de_guardia)
+        
+        return
+
+    def voz_alma(event, interact=True, **kwargs):
+        if interact: voz(event, voz_de_alma)
+        
+        return
+
+    def voz_dario(event, interact=True, **kwargs):
+        if interact: voz(event, voz_de_dario)
         
         return
 
