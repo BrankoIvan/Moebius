@@ -379,7 +379,7 @@ label c0escena1:
 label c0escena2:
 
     play music bgm_Cabina fadeout 1.0 fadein 1.0 loop volume 1
-    Narrador "La cabina del maquinista se extiende frente tuyo, una maraña de controles y palancas en un espacio reducido"
+    Narrador "La cabina del maquinista se extiende frente tuyo, una maraña de controles y palancas en un espacio reducido."
     Narrador "Los controles están manchados de grasa y, en el rincón, ves montones de envoltorios de caramelos."
     
     show spr maquinista with dissolve
@@ -722,9 +722,13 @@ label BadEnding:
     return
 
 label ending:
-    scene bg subte_viaje with fade_largo
-    play audio sfx_Subte_Yendose fadeout 1.0 fadein 1.0 volume 1
-    play music musica_final_del_cap fadeout 1.0 fadein 1.0 loop volume 1
-    pause 3
+    play music musica_final_del_cap fadeout 1.0 fadein 0.1 loop volume 1
+    play sound sfx_Subte_Yendose fadeout 1.0 fadein 0.1 volume 1  
+    scene bg subte_viaje with fade_largo  
+    pause 5
+    stop music
+    stop sound
+    scene bg continuara with fade_comun
+    pause
     
     return
