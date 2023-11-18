@@ -494,42 +494,42 @@ label c0escena7:
     Narrador "Su voz, trémula y vacilante, apenas logra articular palabras coherentes."
     Narrador "Te acercás con cierto temor a este ser."
 
+    show spr alma with dissolve
+
     if not camara.estaEnInventario:
-        Alma_perdida "Cámara… cámara… cámara"
+        Alma_perdida "Cámara... cámara... cámara"
         Protagonista "¿Hola?"
-        Alma_perdida "Mi … cámara … mi … cámara"
+        Alma_perdida "Mi ... cámara ... mi ... cámara"
         Narrador "Parece que no vas a tener otra respuesta"
         $ cambio = 0
         return
-
-    show spr alma with dissolve
 
     menu:
         "¿Estás bien?":
             $ karma += 1
             Protagonista "Hola. Disculpame pero... ¿Te puedo ayudar con algo? ¿Estás bien?"
-            Alma_perdida "No… sé... estoy… atrapado. Necesito…. recuperar…. cámara…"
+            Alma_perdida "No... sé... estoy... atrapado. Necesito.... recuperar.... cámara..."
         
         "¿Sabés donde hay una salida?":
-            Alma_perdida " …Necesito mi cámara… mi cámara… necesito …mi… cámara…."
+            Alma_perdida " ...Necesito mi cámara... mi cámara... necesito ...mi... cámara...."
         
         "¿Por qué te ves así?":
             Protagonista "¿Por qué tenés ese aspecto?"
             Narrador "La sombra se detiene momentáneamente, su apariencia se torna más sombría y triste."
-            Alma_perdida "No … sé.. estoy… perdido… atrapado… necesito… cámara…"
+            Alma_perdida "No ... sé.. estoy... perdido... atrapado... necesito... cámara..."
 
     menu:
         "¿Cámara?":
             pass
     
     Protagonista "¿Estás buscando esto? La encontré en el baño."
-    Alma_perdida "Mi…" 
+    Alma_perdida "Mi..." 
     
     show spr seguridad with dissolve
 
     Guardia "¡Epa, una cara nueva por acá! ¿Y vos, pibe? ¿Qué hacés en este lugar a estas horas?"
-    Protagonista "Estaba intentando ayudarlo… Parece que perdió algo."
-    Guardia "No te confíes tan fácilmente, pibe. Todos se aprovechan en estos lados. ¿Y vos…?"
+    Protagonista "Estaba intentando ayudarlo... Parece que perdió algo."
+    Guardia "No te confíes tan fácilmente, pibe. Todos se aprovechan en estos lados. ¿Y vos...?"
 
     menu:
         "Solo soy un pasajero":
@@ -537,15 +537,15 @@ label c0escena7:
         
         "Quiero salir de este infierno":
             $ karma -= 1
-            Protagonista "Señor, me quedé dormido y…"
+            Protagonista "Señor, me quedé dormido y..."
     
-    Guardia "Está bien… no hay necesidad de que te expliques tanto. Mejor seguí tu camino y no te entrometas donde no te llaman. Acá no queremos problemas."
+    Guardia "Está bien... no hay necesidad de que te expliques tanto. Mejor seguí tu camino y no te entrometas donde no te llaman. Acá no queremos problemas."
     Protagonista "Está bien, no quiero problemas."
     Guardia "Y vos, vení conmigo."
-    Alma_perdida "Solo… mi cámara, no quería…"
+    Alma_perdida "Solo... mi cámara, no quería..."
     Protagonista "¿Esta cámara?"
     Guardia "¿Qué tal si me das esa cámara, pibe? No deberías estar metido en asuntos que no te corresponden."
-    Alma_perdida "Por favor…"
+    Alma_perdida "Por favor..."
 
     menu camara_menu:
         "¿Por qué querés la cámara?" if camara_menu_option1:
@@ -553,7 +553,7 @@ label c0escena7:
             
             Protagonista "No termino de entender porque querés tener este artefacto tan viejo."
             Guardia "Solo entrégala y nadie va a salir lastimado. Este hijo de puta es peligroso."
-            Alma_perdida "Por favor…"
+            Alma_perdida "Por favor..."
             
             jump camara_menu
         
@@ -573,7 +573,7 @@ label c0escena7:
         "No te voy a dar la cámara.":
             $ karma += 10
             Guardia "Vas a tener problemas si no cooperas, pibe."
-            Alma_perdida "Por… favor… no… lo…. hagas…."
+            Alma_perdida "Por... favor... no... lo.... hagas...."
             Guardia "Mirá, pibe, vos no tenés idea de lo que significa esto para mí. Es solo un objeto para ese tipo, pero para mí, es mi boleto de salida de esta vida miserable."
             Narrador "Las decisiones precipitadas arrastran consigo infortunios insondables, ¿Estás seguro de tu decisión?"
 
@@ -587,7 +587,7 @@ label c0escena7:
 
     label .darCamara:
         Protagonista "Está bien, acá tenés la cámara. Pero por favor, dejanos en paz. No queremos problemas"
-        Alma_perdida "¡NO!… MI CÁMARA… POR FAVOR… MI CÁMARA. MI CÁMARA. MI CÁMARA. MI CÁMARA."
+        Alma_perdida "¡NO!... MI CÁMARA... POR FAVOR... MI CÁMARA. MI CÁMARA. MI CÁMARA. MI CÁMARA."
         Guardia "Sos un tipo sensato, pibe."
         
         $ camara.sacarDelInvetario()
@@ -624,7 +624,7 @@ label c0escena7:
     label .noDarCamara:
         Protagonista "No pienso darte algo que no es tuyo. No tenés derecho a exigirlo."
         Guardia "¿No entendés que esto es más grande que vos? Te conviene no hacerte el héroe."
-        Alma_perdida "Mi… cámara…."
+        Alma_perdida "Mi... cámara...."
         Guardia "Escuchá, amigo, este tipo no es quien aparenta. Está en líos permanentemente. Robos, estafas, vos no tenés idea. No vale la pena arriesgarse por alguien así."
         Protagonista "¿Y vos, Guardia? ¿Qué te pasó para terminar así?"
         Guardia "¿Qué querés saber? Solía soñar con ser un buen policía, atrapar a los malos, ¿sabés? Pero la vida, amigo... te golpea tan fuerte que te saca las ganas de soñar."
@@ -656,7 +656,7 @@ label c0escena7:
     Narrador "El guardia, con gesto dubitativo, da media vuelta y se aleja, dejando una sensación de incertidumbre en el ambiente."
     Guardia "No sé si podré, pero... tal vez sea hora de intentarlo."
     hide spr guardia with dissolve
-    Alma_perdida "Gracias…" 
+    Alma_perdida "Gracias..." 
     $ caramelos.agregarAlInvetario()
     $ cambio = 1
     return
@@ -702,7 +702,7 @@ label c0escena10:
     
     Narrador "En la cabina del tren, el aire se densificaba con un aura de urgencia y tensión. El Maquinista, inexpresivo, repetía con monotonía una única súplica."
     Protagonista "¡Necesito respuestas! ¡Por favor, explicame qué está pasando!"
-    Maquinista "Caramelos…"
+    Maquinista "Caramelos..."
     Protagonista "¡No tengo tiempo para esto! ¡Necesito saber qué está pasando!"
     Maquinista "Caramelos..."
     Protagonista "¡Espera! ¡Tengo algo!"
