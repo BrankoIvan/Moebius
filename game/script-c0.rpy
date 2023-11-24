@@ -542,9 +542,15 @@ label c0escena7:
     Guardia "Está bien... no hay necesidad de que te expliques tanto. Mejor seguí tu camino y no te entrometas donde no te llaman. Acá no queremos problemas."
     Protagonista "Está bien, no quiero problemas."
     Guardia "Y vos, vení conmigo."
+
+    show spr alma with dissolve
     Alma_perdida "Solo... mi cámara, no quería..."
     Protagonista "¿Esta cámara?"
+
+    show spr seguridad with dissolve
     Guardia "¿Qué tal si me das esa cámara, pibe? No deberías estar metido en asuntos que no te corresponden."
+
+    show spr alma with dissolve
     Alma_perdida "Por favor..."
 
     menu camara_menu:
@@ -552,7 +558,9 @@ label c0escena7:
             $ camara_menu_option1 = False
             
             Protagonista "No termino de entender porque querés tener este artefacto tan viejo."
+            show spr seguridad with dissolve
             Guardia "Solo entrégala y nadie va a salir lastimado. Este hijo de puta es peligroso."
+            show spr alma with dissolve
             Alma_perdida "Por favor..."
             
             jump camara_menu
@@ -572,8 +580,11 @@ label c0escena7:
 
         "No te voy a dar la cámara.":
             $ karma += 10
+            show spr seguridad with dissolve
             Guardia "Vas a tener problemas si no cooperas, pibe."
+            show spr alma with dissolve
             Alma_perdida "Por... favor... no... lo.... hagas...."
+            show spr seguridad with dissolve
             Guardia "Mirá, pibe, vos no tenés idea de lo que significa esto para mí. Es solo un objeto para ese tipo, pero para mí, es mi boleto de salida de esta vida miserable."
             Narrador "Las decisiones precipitadas arrastran consigo infortunios insondables, ¿Estás seguro de tu decisión?"
 
@@ -587,7 +598,9 @@ label c0escena7:
 
     label .darCamara:
         Protagonista "Está bien, acá tenés la cámara. Pero por favor, dejanos en paz. No queremos problemas"
+        show spr alma with dissolve
         Alma_perdida "¡NO!... MI CÁMARA... POR FAVOR... MI CÁMARA. MI CÁMARA. MI CÁMARA. MI CÁMARA."
+        show spr seguridad with dissolve
         Guardia "Sos un tipo sensato, pibe."
         
         $ camara.sacarDelInvetario()
@@ -595,24 +608,35 @@ label c0escena7:
         Guardia "¿Querés ver cómo lidiamos con los hijos de puta acá abajo?"
         Protagonista "¿Qué está pasando?"
         Guardia "Vamos a hacer un pequeño espectáculo."
+        show spr alma with dissolve
         Alma_perdida "POR FAVOR. NO. LO. HAGAS"
         Protagonista "¿Qué hice?"
         Narrador "El guardia tiene un gesto de desdén y sadismo. Sus ojos brillan con malicia mientras observa a su presa, disfrutando de la sensación de poder absoluto sobre los demás."
+        show spr seguridad with dissolve
         Guardia "Acá abajo, se hacen cumplir las reglas, y quien no las respeta paga el precio. Es hora de recordarles a todos dónde están sus límites."
         Narrador "Un escalofrío recorre la habitación cuando el guardia levanta la cámara sobre su cabeza con un brillo retorcido en sus ojos."
+        show spr alma with dissolve
         Alma_perdida "POR FAVOR. NO. LO. HAGAS"
+        show spr seguridad with dissolve
         Guardia "Las reglas son claras. Y las consecuencias, inevitables."
-        Narrador "Sin un atisbo de humanidad, el guardia tira la cámara con una violencia deliberada contra el piso. El estruendo retumba en la habitación, pero lo que sigue es mucho más macabro."
-
-        #(//Por ahi aca se puede poner todo en negro, o parar el sonido, o hacer un plano detalle de la cara del alma perdida o el guardia)
+        hide spr seguridad with dissolve
         
+        play music musica_final_del_cap fadeout 1.0 fadein 1.0 loop volume 1
+        scene bg muerte with fade_comun
+        Narrador "Sin un atisbo de humanidad, el guardia tira la cámara con una violencia deliberada contra el piso. El estruendo retumba en la habitación, pero lo que sigue es mucho más macabro."
+        #(//Por ahi aca se puede poner todo en negro, o parar el sonido, o hacer un plano detalle de la cara del alma perdida o el guardia)        
         Narrador "La criatura indefensa, en el momento en que la cámara estalla en mil fragmentos, siente cómo su ser se desgarra." 
+        
+        play audio sfx_Alma_sufre fadeout 1.0 fadein 1.0 volume 1
         Narrador "No es solo su cuerpo lo que se desintegra, sino su esencia misma, su identidad." 
         Narrador "Se convulsiona en un torbellino de agónica disolución, sus gritos ahora mezclados con un sufrimiento más allá de lo físico, un tormento que trasciende la materia."
+
+        play audio sfx_Alma_se_desintegra fadeout 1.0 fadein 1.0 volume 1
         Narrador "Sus gritos se convierten en un aullido desgarrador, un sonido que atraviesa las paredes del subte y resuena en los pasillos. Es un sonido que no es solo de dolor, sino también de miedo, de desesperación, de pérdida."
         Narrador "La habitación se llena con una malevolencia palpable mientras el guardia observa con placer retorcido."
         Narrador "Los restos destrozados de la cámara yacen inertes en el piso, pero la verdadera tragedia residía en la pérdida absoluta y espantosa, cuyo ser ahora vaga disperso por los rincones más oscuros de este lugar festado de maldad."
-        
+        scene bg escalera with fade_comun
+        show spr seguridad with dissolve
         Guardia "No te hagas drama, todo quedó entre nosotros, ¿viste? A veces hay que hacer lo que hay que hacer para mantener el orden, y vos colaboraste. Así que, tomatelo con calma, ¿eh? Vos entendiste cómo funciona esto. Te la jugaste, y eso se valora."
         Guardia "Bueno, bien ahí, pibe. Gracias por la ayuda. Tomá, esto es para vos." 
         $ caramelos.agregarAlInvetario()
@@ -623,10 +647,14 @@ label c0escena7:
 
     label .noDarCamara:
         Protagonista "No pienso darte algo que no es tuyo. No tenés derecho a exigirlo."
+        show spr seguridad with dissolve
         Guardia "¿No entendés que esto es más grande que vos? Te conviene no hacerte el héroe."
+        show spr alma with dissolve
         Alma_perdida "Mi... cámara...."
+        show spr seguridad with dissolve
         Guardia "Escuchá, amigo, este tipo no es quien aparenta. Está en líos permanentemente. Robos, estafas, vos no tenés idea. No vale la pena arriesgarse por alguien así."
         Protagonista "¿Y vos, Guardia? ¿Qué te pasó para terminar así?"
+        show spr seguridad with dissolve
         Guardia "¿Qué querés saber? Solía soñar con ser un buen policía, atrapar a los malos, ¿sabés? Pero la vida, amigo... te golpea tan fuerte que te saca las ganas de soñar."
 
     menu:
@@ -655,8 +683,9 @@ label c0escena7:
     #(Suspira)
     Narrador "El guardia, con gesto dubitativo, da media vuelta y se aleja, dejando una sensación de incertidumbre en el ambiente."
     Guardia "No sé si podré, pero... tal vez sea hora de intentarlo."
-    hide spr guardia with dissolve
+    show spr alma with dissolve
     Alma_perdida "Gracias..." 
+    hide spr alma with dissolve
     $ caramelos.agregarAlInvetario()
     $ cambio = 1
     return

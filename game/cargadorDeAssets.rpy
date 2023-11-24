@@ -74,8 +74,9 @@ image bg vias_3 = backgroundse1 + "vias_3.jpg"
 
 # Fondos Animados
 
-image bg sueño_2 = Movie(play= movies + "sueño_1.webm")
-image bg sueño_1 = Movie(play= movies + "sueño_2.webm")
+image bg sueño_1 = Movie(play= movies + "sueño_1.webm")
+image bg sueño_2 = Movie(play= movies + "sueño_2.webm")
+image bg muerte = Movie(play= movies + "muerte_alma.webm")
 image bg vagon = Movie(play= movies + "vagon.webm")
 image bg anden_1 = Movie(play= movies + "anden_1.webm")
 image bg despertar = Movie(play = movies + "despertar.webm")
@@ -147,6 +148,9 @@ define audio.sfx_Subte_Frenando = sfx + "SFX Subte frenando.mp3"
 define audio.sfx_Subte_Yendose = sfx + "SFX Subte yéndose.mp3"
 define audio.sfx_Voces = sfx + "SFX Voces se desvanecen en el subte.mp3"
 define audio.sfx_Camara = sfx + "SFX Cámara.mp3"
+define audio.sfx_Alma_se_desintegra = sfx + "SFX Alma desintegrada.mp3"
+define audio.sfx_Alma_sufre = sfx + "SFX Alma sufriendo.mp3"
+
 
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
